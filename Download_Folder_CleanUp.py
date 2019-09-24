@@ -7,9 +7,13 @@ import shutil
 from datetime import datetime
 from time import gmtime, strftime
 
+FileSizeArr = []
+
 class MyHandler(FileSystemEventHandler):
     def on_modified(self, event):
         for filename in os.listdir(folder_to_track):
+            print(os.listdir(folder_to_track).index(filename))
+            print(os.path.getsize(folder_to_track + '/' + filename))
             i = 1
             if filename != 'Sorted':
                 try:
@@ -34,7 +38,7 @@ class MyHandler(FileSystemEventHandler):
                     new_name = folder_destination_path + "/" + new_name
                     os.rename(src, new_name)
                 except Exception:
-                    print(filename)
+                    print("Error " + filename)
 
 extensions_folders = {
 #No name
