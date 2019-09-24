@@ -7,38 +7,31 @@ import shutil
 from datetime import datetime
 from time import gmtime, strftime
 
-FileSizeArr = []
+FileSizeArr = [[]]
 
 class MyHandler(FileSystemEventHandler):
     def on_modified(self, event):
         for filename in os.listdir(folder_to_track):
-            print(os.listdir(folder_to_track))
-            #print(str(os.listdir(folder_to_track).index(filename)) + " - " + filename + " - " + str(os.path.getsize(folder_to_track + '/' + filename)))
-            i = 1
-            if filename != 'Sorted':
-                try:
-                    new_name = filename
-                    extension = 'noname'
-                    try:
-                        extension = str(os.path.splitext(folder_to_track + '/' + filename)[1])
-                        path = extensions_folders[extension]
-                    except Exception:
-                        extension = 'noname'
-
-                    folder_destination_path = extensions_folders[extension]
-
-                    file_exists = os.path.isfile(folder_destination_path + "/" + new_name)
-                    while file_exists:
-                        i += 1
-                        new_name = os.path.splitext(folder_to_track + '/' + filename)[0] + str(i) + os.path.splitext(folder_to_track + '/' + filename)[1]
-                        new_name = new_name.split("/")[4]
-                        file_exists = os.path.isfile(folder_destination_path + "/" + new_name)
-                    src = folder_to_track + "/" + filename
-
-                    new_name = folder_destination_path + "/" + new_name
-                    os.rename(src, new_name)
-                except Exception:
-                    print("Error " + filename)
+            if filename != 'Sorted' and filename != 'desktop.ini':
+                FileSizeArr[0].append(filename)
+                FileSizeArr.append([])
+        print(FileSizeArr)
+        for i in range(3):
+            for filename in os.listdir(folder_to_track):
+                if filename != 'Sorted' and filename != 'desktop.ini':
+                    FileSizeArr[FileSizeArr[0].index(filename)+1].append(os.path.getsize(folder_to_track + '/' + filename))
+            time.sleep(3)
+        for file in FileSizeArr:
+            if FileSizeArr.index(file) != 0:
+                Changed = False
+                for size in FileSizeArr[FileSizeArr.index(file)]:
+                    if size != FileSizeArr[FileSizeArr.index(file)][0]:
+                        Changed = True
+                print(Changed)
+                        
+        print(FileSizeArr)
+            
+            
 
 extensions_folders = {
 #No name
