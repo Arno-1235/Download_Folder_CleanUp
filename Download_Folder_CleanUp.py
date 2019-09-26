@@ -7,38 +7,61 @@ import shutil
 from datetime import datetime
 from time import gmtime, strftime
 
-FileSizeArr = []
-
 class MyHandler(FileSystemEventHandler):
     def on_modified(self, event):
+        FileSizeArr = [[]]
+        time.sleep(1)
         for filename in os.listdir(folder_to_track):
-            print(os.listdir(folder_to_track))
-            #print(str(os.listdir(folder_to_track).index(filename)) + " - " + filename + " - " + str(os.path.getsize(folder_to_track + '/' + filename)))
-            i = 1
-            if filename != 'Sorted':
-                try:
-                    new_name = filename
-                    extension = 'noname'
+            if filename != 'Sorted' and filename != 'desktop.ini':
+                if str(os.path.splitext(folder_to_track + '/' + filename)[1]) != ".crdownload":
+                    FileSizeArr[0].append(filename)
+                    FileSizeArr.append([])
+        #print(FileSizeArr)
+        for i in range(2):
+            for filename in os.listdir(folder_to_track):
+                if filename != 'Sorted' and filename != 'desktop.ini' and str(os.path.splitext(folder_to_track + '/' + filename)[1]) != ".crdownload":
                     try:
-                        extension = str(os.path.splitext(folder_to_track + '/' + filename)[1])
-                        path = extensions_folders[extension]
-                    except Exception:
+                        FileSizeArr[FileSizeArr[0].index(filename)+1].append(os.path.getsize(folder_to_track + '/' + filename))
+                    except:
+                        print("Error")
+            time.sleep(5)
+        for file in FileSizeArr:
+            if FileSizeArr.index(file) != 0:
+                Changed = False
+                for size in FileSizeArr[FileSizeArr.index(file)]:
+                    if size != FileSizeArr[FileSizeArr.index(file)][0]:
+                        Changed = True
+                
+                if Changed == False:
+                    filename = FileSizeArr[0][FileSizeArr.index(file)-1]
+                    
+                    try:
+                        new_name = filename
                         extension = 'noname'
+                        try:
+                            extension = str(os.path.splitext(folder_to_track + '/' + filename)[1])
+                            path = extensions_folders[extension]
+                        except Exception:
+                            extension = 'noname'
 
-                    folder_destination_path = extensions_folders[extension]
+                        folder_destination_path = extensions_folders[extension]
 
-                    file_exists = os.path.isfile(folder_destination_path + "/" + new_name)
-                    while file_exists:
-                        i += 1
-                        new_name = os.path.splitext(folder_to_track + '/' + filename)[0] + str(i) + os.path.splitext(folder_to_track + '/' + filename)[1]
-                        new_name = new_name.split("/")[4]
                         file_exists = os.path.isfile(folder_destination_path + "/" + new_name)
-                    src = folder_to_track + "/" + filename
+                        while file_exists:
+                            i += 1
+                            new_name = os.path.splitext(folder_to_track + '/' + filename)[0] + str(i) + os.path.splitext(folder_to_track + '/' + filename)[1]
+                            new_name = new_name.split("/")[4]
+                            file_exists = os.path.isfile(folder_destination_path + "/" + new_name)
+                        src = folder_to_track + "/" + filename
 
-                    new_name = folder_destination_path + "/" + new_name
-                    os.rename(src, new_name)
-                except Exception:
-                    print("Error " + filename)
+                        new_name = folder_destination_path + "/" + new_name
+                        os.rename(src, new_name)
+                    except Exception:
+                        print("Error " + filename)
+         
+        #print(FileSizeArr)
+            
+            
 
 extensions_folders = {
 #No name
@@ -88,8 +111,11 @@ extensions_folders = {
     '.gif': "/Users/Arno/Downloads/Sorted/Media/Images",
     '.ico': "/Users/Arno/Downloads/Sorted/Media/Images",
     '.jpg': "/Users/Arno/Downloads/Sorted/Media/Images",
+    '.JPG': "/Users/Arno/Downloads/Sorted/Media/Images",
     '.jpeg': "/Users/Arno/Downloads/Sorted/Media/Images",
+    '.JPEG': "/Users/Arno/Downloads/Sorted/Media/Images",
     '.png': "/Users/Arno/Downloads/Sorted/Media/Images",
+    '.PNG': "/Users/Arno/Downloads/Sorted/Media/Images",
     '.ps': "/Users/Arno/Downloads/Sorted/Media/Images",
     '.psd': "/Users/Arno/Downloads/Sorted/Media/Images",
     '.svg': "/Users/Arno/Downloads/Sorted/Media/Images",
