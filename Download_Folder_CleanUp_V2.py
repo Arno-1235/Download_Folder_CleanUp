@@ -5,9 +5,9 @@ folder_to_track = '/Users/Arno/Downloads'
 folder_destination = '/Users/Arno/Downloads/Sorted'
 
 extensions_folders = {
-# No name
+    # No name
     'noname': "/Users/Arno/Downloads/Sorted/Other/Uncategorized",
-# Audio
+    # Audio
     '.aif': "/Users/Arno/Downloads/Sorted/Media/Audio",
     '.cda': "/Users/Arno/Downloads/Sorted/Media/Audio",
     '.mid': "/Users/Arno/Downloads/Sorted/Media/Audio",
@@ -19,7 +19,7 @@ extensions_folders = {
     '.wma': "/Users/Arno/Downloads/Sorted/Media/Audio",
     '.wpl': "/Users/Arno/Downloads/Sorted/Media/Audio",
     '.m3u': "/Users/Arno/Downloads/Sorted/Media/Audio",
-# Text
+    # Text
     '.txt': "/Users/Arno/Downloads/Sorted/Text/TextFiles",
     '.doc': "/Users/Arno/Downloads/Sorted/Text/Microsoft/Word",
     '.docx': "/Users/Arno/Downloads/Sorted/Text/Microsoft/Word",
@@ -30,7 +30,7 @@ extensions_folders = {
     '.wks ': "/Users/Arno/Downloads/Sorted/Text/TextFiles",
     '.wps': "/Users/Arno/Downloads/Sorted/Text/TextFiles",
     '.wpd': "/Users/Arno/Downloads/Sorted/Text/TextFiles",
-# Video
+    # Video
     '.3g2': "/Users/Arno/Downloads/Sorted/Media/Video",
     '.3gp': "/Users/Arno/Downloads/Sorted/Media/Video",
     '.avi': "/Users/Arno/Downloads/Sorted/Media/Video",
@@ -46,7 +46,7 @@ extensions_folders = {
     '.swf': "/Users/Arno/Downloads/Sorted/Media/Video",
     '.vob': "/Users/Arno/Downloads/Sorted/Media/Video",
     '.wmv': "/Users/Arno/Downloads/Sorted/Media/Video",
-# Images
+    # Images
     '.ai': "/Users/Arno/Downloads/Sorted/Media/Images",
     '.bmp': "/Users/Arno/Downloads/Sorted/Media/Images",
     '.gif': "/Users/Arno/Downloads/Sorted/Media/Images",
@@ -63,7 +63,7 @@ extensions_folders = {
     '.tif': "/Users/Arno/Downloads/Sorted/Media/Images",
     '.tiff': "/Users/Arno/Downloads/Sorted/Media/Images",
     '.CR2': "/Users/Arno/Downloads/Sorted/Media/Images",
-# Internet
+    # Internet
     '.asp': "/Users/Arno/Downloads/Sorted/Other/Internet",
     '.aspx': "/Users/Arno/Downloads/Sorted/Other/Internet",
     '.cer': "/Users/Arno/Downloads/Sorted/Other/Internet",
@@ -78,7 +78,7 @@ extensions_folders = {
     '.php': "/Users/Arno/Downloads/Sorted/Other/Internet",
     '.rss': "/Users/Arno/Downloads/Sorted/Other/Internet",
     '.xhtml': "/Users/Arno/Downloads/Sorted/Other/Internet",
-# Compressed
+    # Compressed
     '.7z': "/Users/Arno/Downloads/Sorted/Other/Compressed",
     '.arj': "/Users/Arno/Downloads/Sorted/Other/Compressed",
     '.deb': "/Users/Arno/Downloads/Sorted/Other/Compressed",
@@ -88,13 +88,13 @@ extensions_folders = {
     '.tar.gz': "/Users/Arno/Downloads/Sorted/Other/Compressed",
     '.z': "/Users/Arno/Downloads/Sorted/Other/Compressed",
     '.zip': "/Users/Arno/Downloads/Sorted/Other/Compressed",
-# Disc
+    # Disc
     '.bin': "/Users/Arno/Downloads/Sorted/Other/Disc",
     '.dmg': "/Users/Arno/Downloads/Sorted/Other/Disc",
     '.iso': "/Users/Arno/Downloads/Sorted/Other/Disc",
     '.toast': "/Users/Arno/Downloads/Sorted/Other/Disc",
     '.vcd': "/Users/Arno/Downloads/Sorted/Other/Disc",
-# Data
+    # Data
     '.csv': "/Users/Arno/Downloads/Sorted/Programming/Database",
     '.dat': "/Users/Arno/Downloads/Sorted/Programming/Database",
     '.db': "/Users/Arno/Downloads/Sorted/Programming/Database",
@@ -106,7 +106,7 @@ extensions_folders = {
     '.tar': "/Users/Arno/Downloads/Sorted/Programming/Database",
     '.xml': "/Users/Arno/Downloads/Sorted/Programming/Database",
     '.json': "/Users/Arno/Downloads/Sorted/Programming/Database",
-# Executables
+    # Executables
     '.apk': "/Users/Arno/Downloads/Sorted/Other/Executables",
     '.bat': "/Users/Arno/Downloads/Sorted/Other/Executables",
     '.com': "/Users/Arno/Downloads/Sorted/Other/Executables",
@@ -114,18 +114,18 @@ extensions_folders = {
     '.gadget': "/Users/Arno/Downloads/Sorted/Other/Executables",
     '.jar': "/Users/Arno/Downloads/Sorted/Other/Executables",
     '.wsf': "/Users/Arno/Downloads/Sorted/Other/Executables",
-# Fonts
+    # Fonts
     '.fnt': "/Users/Arno/Downloads/Sorted/Other/Fonts",
     '.fon': "/Users/Arno/Downloads/Sorted/Other/Fonts",
     '.otf': "/Users/Arno/Downloads/Sorted/Other/Fonts",
     '.ttf': "/Users/Arno/Downloads/Sorted/Other/Fonts",
-# Presentations
+    # Presentations
     '.key': "/Users/Arno/Downloads/Sorted/Text/Presentations",
     '.odp': "/Users/Arno/Downloads/Sorted/Text/Presentations",
     '.pps': "/Users/Arno/Downloads/Sorted/Text/Presentations",
     '.ppt': "/Users/Arno/Downloads/Sorted/Text/Presentations",
     '.pptx': "/Users/Arno/Downloads/Sorted/Text/Presentations",
-# Programming
+    # Programming
     '.c': "/Users/Arno/Downloads/Sorted/Programming/C&C++",
     '.class': "/Users/Arno/Downloads/Sorted/Programming/Java",
     '.dart': "/Users/Arno/Downloads/Sorted/Programming/Dart",
@@ -134,12 +134,12 @@ extensions_folders = {
     '.swift': "/Users/Arno/Downloads/Sorted/Programming/Swift",
     '.html': "/Users/Arno/Downloads/Sorted/Programming/C&C++",
     '.h': "/Users/Arno/Downloads/Sorted/Programming/C&C++",
-# Spreadsheets
+    # Spreadsheets
     '.ods': "/Users/Arno/Downloads/Sorted/Text/Microsoft/Excel",
     '.xlr': "/Users/Arno/Downloads/Sorted/Text/Microsoft/Excel",
     '.xls': "/Users/Arno/Downloads/Sorted/Text/Microsoft/Excel",
     '.xlsx': "/Users/Arno/Downloads/Sorted/Text/Microsoft/Excel",
-# System
+    # System
     '.bak': "/Users/Arno/Downloads/Sorted/Text/Other/System",
     '.cab': "/Users/Arno/Downloads/Sorted/Text/Other/System",
     '.cfg': "/Users/Arno/Downloads/Sorted/Text/Other/System",
@@ -159,38 +159,45 @@ extensions_folders = {
 
 if __name__ == "__main__":
     while True:
-        if input("Clean up? ") == "q":
+        inputText = input("Clean up?")
+        if inputText == "q":
             break
-        files = []
-        for filename in os.listdir(folder_to_track):
-            if filename != "desktop.ini" and filename != "Sorted":
-                files.append(filename)
-        counter = 0
-        for f in files:
-            try:
-                new_name = f
-                extension = 'noname'
+        elif inputText == "l":
+            for filename in os.listdir(folder_to_track):
+                print(filename)
+        else:
+            files = []
+            for filename in os.listdir(folder_to_track):
+                if filename != "desktop.ini" and filename != "Sorted":
+                    files.append(filename)
+            counter = 0
+            for f in files:
                 try:
-                    extension = str(os.path.splitext(folder_to_track + '/' + f)[1])
-                    path = extensions_folders[extension]
-                except Exception:
+                    new_name = f
                     extension = 'noname'
+                    try:
+                        extension = str(os.path.splitext(
+                            folder_to_track + '/' + f)[1])
+                        path = extensions_folders[extension]
+                    except Exception:
+                        extension = 'noname'
 
-                folder_destination_path = extensions_folders[extension]
+                    folder_destination_path = extensions_folders[extension]
 
-                file_exists = os.path.isfile(folder_destination_path + "/" + new_name)
-                while file_exists:
-                    i += 1
-                    new_name = os.path.splitext(folder_to_track + '/' + f)[0] + str(
-                        i) + os.path.splitext(folder_to_track + '/' + f)[1]
-                    new_name = new_name.split("/")[4]
                     file_exists = os.path.isfile(
                         folder_destination_path + "/" + new_name)
-                src = folder_to_track + "/" + f
+                    while file_exists:
+                        i += 1
+                        new_name = os.path.splitext(folder_to_track + '/' + f)[0] + str(
+                            i) + os.path.splitext(folder_to_track + '/' + f)[1]
+                        new_name = new_name.split("/")[4]
+                        file_exists = os.path.isfile(
+                            folder_destination_path + "/" + new_name)
+                    src = folder_to_track + "/" + f
 
-                new_name = folder_destination_path + "/" + new_name
-                os.rename(src, new_name)
-                counter += 1
-            except Exception:
-                print("Error " + filename)
-        print(counter, "files cleaned.")
+                    new_name = folder_destination_path + "/" + new_name
+                    os.rename(src, new_name)
+                    counter += 1
+                except Exception:
+                    print("Error " + filename)
+            print(counter, "files cleaned.")
