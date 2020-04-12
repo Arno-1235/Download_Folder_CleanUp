@@ -157,47 +157,50 @@ extensions_folders = {
     '.tmp': "/Users/Arno/Downloads/Sorted/Text/Other/System",
 }
 
+def listFiles():
+    for filename in os.listdir(folder_to_track):
+        print(filename)
+
+def cleanUp():
+    files = []
+    for filename in os.listdir(folder_to_track):
+        if filename != "desktop.ini" and filename != "Sorted":
+            files.append(filename)
+    counter = 0
+    for f in files:
+        try:
+            new_name = f
+            extension = 'noname'
+            try:
+                extension = str(os.path.splitext(
+                    folder_to_track + '/' + f)[1])
+                path = extensions_folders[extension]
+            except Exception:
+                extension = 'noname'
+            folder_destination_path = extensions_folders[extension]
+            file_exists = os.path.isfile(
+                folder_destination_path + "/" + new_name)
+            while file_exists:
+                i += 1
+                new_name = os.path.splitext(folder_to_track + '/' + f)[0] + str(
+                    i) + os.path.splitext(folder_to_track + '/' + f)[1]
+                new_name = new_name.split("/")[4]
+                file_exists = os.path.isfile(
+                    folder_destination_path + "/" + new_name)
+            src = folder_to_track + "/" + f
+            new_name = folder_destination_path + "/" + new_name
+            os.rename(src, new_name)
+            counter += 1
+        except Exception:
+            print("Error " + filename)
+    print(counter, "files cleaned.")
+
 if __name__ == "__main__":
     while True:
         inputText = input("Clean up?")
         if inputText == "q":
             break
         elif inputText == "l":
-            for filename in os.listdir(folder_to_track):
-                print(filename)
+            listFiles()
         else:
-            files = []
-            for filename in os.listdir(folder_to_track):
-                if filename != "desktop.ini" and filename != "Sorted":
-                    files.append(filename)
-            counter = 0
-            for f in files:
-                try:
-                    new_name = f
-                    extension = 'noname'
-                    try:
-                        extension = str(os.path.splitext(
-                            folder_to_track + '/' + f)[1])
-                        path = extensions_folders[extension]
-                    except Exception:
-                        extension = 'noname'
-
-                    folder_destination_path = extensions_folders[extension]
-
-                    file_exists = os.path.isfile(
-                        folder_destination_path + "/" + new_name)
-                    while file_exists:
-                        i += 1
-                        new_name = os.path.splitext(folder_to_track + '/' + f)[0] + str(
-                            i) + os.path.splitext(folder_to_track + '/' + f)[1]
-                        new_name = new_name.split("/")[4]
-                        file_exists = os.path.isfile(
-                            folder_destination_path + "/" + new_name)
-                    src = folder_to_track + "/" + f
-
-                    new_name = folder_destination_path + "/" + new_name
-                    os.rename(src, new_name)
-                    counter += 1
-                except Exception:
-                    print("Error " + filename)
-            print(counter, "files cleaned.")
+            cleanUp()
